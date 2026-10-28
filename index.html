@@ -150,8 +150,8 @@ const EXT = ['jpeg','jpg','png','webp'];
 const cands = n => ['', BASE].flatMap(b => EXT.map(e => `${b}${n}.${e}`));
 const setImg = (img, n) => { const c = cands(n); let i = 0; img.onerror = () => { if (++i < c.length) img.src = c[i]; }; img.src = c[0]; };
 const PHOTOS = [2,3,4,5,6];
-const LAGU = 'WhatsApp Audio 2026-10-28 at 22.46.36';   // nama file lagu tanpa ekstensi
-const AEXT = ['mpeg','mp3','m4a','opus'];
+const LAGU = 'lagu';   // nama file lagu tanpa ekstensi (lagu.mp3)
+const AEXT = ['mp3','mpeg','m4a','opus'];
 const LOKASI = 'Kp. Pabuaran Pangkat, Pangkat, Jayanti, Kabupaten Tangerang, Banten';
 const MULAI = new Date('2026-11-01T09:00:00+07:00');
 const DOA = [
