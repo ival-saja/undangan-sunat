@@ -24,7 +24,7 @@ p{margin:8px 0}
 .btn{display:inline-block;margin:6px;padding:11px 26px;border:1px solid var(--gold);border-radius:40px;background:linear-gradient(135deg,#e6c780,#b98e45);color:#1a1230;font:600 1rem 'Cormorant Garamond',serif;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px #d4af6a55}
 .btn.ghost{background:none;color:var(--gold2)}
-.btn:focus-visible,.g:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.btn:focus-visible,.g:focus-visible,.mus:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
 /* sampul: tirai beludru */
 .cover{position:fixed;inset:0 auto 0 50%;width:min(480px,100%);transform:translateX(-50%);z-index:50;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .cover.open{pointer-events:none}
@@ -38,6 +38,13 @@ p{margin:8px 0}
 .guest{margin:14px 0 18px;font-size:1.05rem}.guest b{display:block;font-size:1.5rem;color:var(--gold2)}
 .sp{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold2);box-shadow:0 0 8px var(--gold);animation:tw 3s infinite alternate}
 @keyframes tw{from{opacity:.1;transform:translateY(0)}to{opacity:1;transform:translateY(-14px)}}
+/* tombol musik */
+.mus{position:fixed;bottom:18px;right:max(14px,calc(50% - 226px));width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);background:#0a1030dd;color:var(--gold2);font-size:1.4rem;cursor:pointer;z-index:40;display:none;align-items:center;justify-content:center;box-shadow:0 0 14px #d4af6a55}
+.mus.show{display:flex}
+.mus span{display:block}
+.mus.on span{animation:spin 4s linear infinite}
+.mus:not(.on)::after{content:"";position:absolute;width:30px;height:2px;background:var(--gold2);transform:rotate(-45deg)}
+@keyframes spin{to{transform:rotate(360deg)}}
 /* acara */
 .inv{font-size:1.1rem}.inv .script{font-size:2.8rem;display:block;margin:4px 0}
 .card{border:1px solid #d4af6a88;border-radius:22px;padding:28px 20px;background:#ffffff0d;backdrop-filter:blur(6px);margin-top:20px}
@@ -70,13 +77,15 @@ footer{padding:50px 28px 70px}
 <div class="cover" id="cover">
   <div class="cv l"></div><div class="cv r"></div>
   <div class="cin">
-    <p class="small">Undangan Syukuran Khitanan dan ulang tahun</p>
+    <p class="small">Undangan Syukuran Khitanan</p>
     <div class="arch"><img data-p="2" alt="Muhamad Arfan Gafi"></div>
     <h1 class="script">Muhamad Arfan Gafi</h1>
     <p class="guest">Kepada Yth. Bapak/Ibu/Saudara/i<b id="guest">Tamu Undangan</b></p>
     <button class="btn" id="open">Buka Undangan</button>
   </div>
 </div>
+
+<button class="mus" id="mus" aria-label="Putar atau jeda musik"><span>♪</span></button>
 
 <main class="wrap">
   <section style="padding-top:56px">
@@ -92,7 +101,7 @@ footer{padding:50px 28px 70px}
 
   <section>
     <p class="inv">Dengan penuh kebahagiaan, kami menantikan kehadiran<span class="script" id="g2">Anda</span>untuk berbagi doa dan kebersamaan pada</p>
-    <h2 class="script" style="margin-top:22px">Khitanan dan ulang tahun</h2>
+    <h2 class="script" style="margin-top:22px">Acara Khitanan</h2>
     <div class="card">
       <p class="when">Minggu, 01 November 2026</p>
       <p>Pukul 09.00 WIB – Selesai</p>
@@ -141,6 +150,8 @@ const EXT = ['jpeg','jpg','png','webp'];
 const cands = n => ['', BASE].flatMap(b => EXT.map(e => `${b}${n}.${e}`));
 const setImg = (img, n) => { const c = cands(n); let i = 0; img.onerror = () => { if (++i < c.length) img.src = c[i]; }; img.src = c[0]; };
 const PHOTOS = [2,3,4,5,6];
+const LAGU = 'WhatsApp Audio 2026-10-28 at 22.46.36';   // nama file lagu tanpa ekstensi
+const AEXT = ['mpeg','mp3','m4a','opus'];
 const LOKASI = 'Kp. Pabuaran Pangkat, Pangkat, Jayanti, Kabupaten Tangerang, Banten';
 const MULAI = new Date('2026-11-01T09:00:00+07:00');
 const DOA = [
@@ -163,7 +174,19 @@ const sparkle = (el, n) => { for (let i = 0; i < n; i++) { const s = document.cr
   el.appendChild(s); } };
 sparkle($('.cover'), 16); sparkle($('#doa'), 22);
 
+/* musik: dicoba berbagai ekstensi & lokasi sampai ada yang bisa diputar */
+const ac = ['', BASE].flatMap(b => AEXT.map(e => b + encodeURIComponent(LAGU) + '.' + e));
+const au = new Audio(); au.loop = true; au.src = ac[0];
+const mus = $('#mus'); let ai = 0, want = false, fd;
+const play = () => au.play().catch(() => {});
+au.onerror = () => { if (++ai < ac.length) { au.src = ac[ai]; if (want) play(); } else { want = false; mus.classList.remove('on'); } };
+const setMus = on => { want = on; mus.classList.toggle('on', on); clearInterval(fd);
+  if (on) { au.volume = 0; play(); fd = setInterval(() => { au.volume = Math.min(.8, au.volume + .05); if (au.volume >= .8) clearInterval(fd); }, 120); }
+  else au.pause(); };
+mus.onclick = () => setMus(!mus.classList.contains('on'));
+
 $('#open').onclick = () => { $('#cover').classList.add('open'); document.body.classList.remove('lock'); scrollTo(0,0);
+  mus.classList.add('show'); setMus(true);
   setTimeout(() => $('#cover').style.display = 'none', 2000); };
 
 /* hitung mundur */
