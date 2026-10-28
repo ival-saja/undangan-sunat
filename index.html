@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Undangan Khitanan Muhamad Arfan Gafi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a1030;--wine:#5a1a26;--gold:#d4af6a;--gold2:#f0dba6;--cream:#f3e8d0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#04061a;color:var(--cream);font:20px/1.6 'Cormorant Garamond',Georgia,serif;text-align:center}
+body.lock{overflow:hidden;height:100vh}
+.wrap{max-width:480px;margin:auto;background:linear-gradient(180deg,var(--navy) 0,#0d1440 35%,#2a1230 70%,var(--wine) 100%);box-shadow:0 0 60px #000;overflow:hidden}
+section{padding:68px 28px}
+.script{font-family:'Great Vibes','Brush Script MT',cursive;color:var(--gold2);font-weight:400;line-height:1.15}
+h2.script{font-size:2.6rem;margin-bottom:10px}
+p{margin:8px 0}
+.small{font-size:.95rem;opacity:.8}
+.orn{color:var(--gold);letter-spacing:.6em;margin:14px 0}
+.arch{width:76%;aspect-ratio:3/4;margin:26px auto;border:2px solid var(--gold);border-radius:999px 999px 18px 18px;padding:7px;background:#0006}
+.arch img{width:100%;height:100%;object-fit:cover;border-radius:999px 999px 12px 12px;display:block}
+.btn{display:inline-block;margin:6px;padding:11px 26px;border:1px solid var(--gold);border-radius:40px;background:linear-gradient(135deg,#e6c780,#b98e45);color:#1a1230;font:600 1rem 'Cormorant Garamond',serif;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px #d4af6a55}
+.btn.ghost{background:none;color:var(--gold2)}
+.btn:focus-visible,.g:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+/* sampul: tirai beludru */
+.cover{position:fixed;inset:0 auto 0 50%;width:min(480px,100%);transform:translateX(-50%);z-index:50;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cover.open{pointer-events:none}
+.cv{position:absolute;top:0;bottom:0;width:50.5%;background:repeating-linear-gradient(90deg,#0b1445 0 26px,#18246a 40px,#0b1445 56px);transition:transform 1.8s cubic-bezier(.7,0,.2,1);box-shadow:0 0 40px #000}
+.cv.l{left:0}.cv.r{right:0}
+.cover.open .l{transform:translateX(-102%)}.cover.open .r{transform:translateX(102%)}
+.cin{position:relative;z-index:2;padding:20px;transition:opacity .7s,transform .7s}
+.cover.open .cin{opacity:0;transform:scale(.9)}
+.cin .arch{width:52%;margin:14px auto}
+.cin .script{font-size:3rem}
+.guest{margin:14px 0 18px;font-size:1.05rem}.guest b{display:block;font-size:1.5rem;color:var(--gold2)}
+.sp{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold2);box-shadow:0 0 8px var(--gold);animation:tw 3s infinite alternate}
+@keyframes tw{from{opacity:.1;transform:translateY(0)}to{opacity:1;transform:translateY(-14px)}}
+/* acara */
+.inv{font-size:1.1rem}.inv .script{font-size:2.8rem;display:block;margin:4px 0}
+.card{border:1px solid #d4af6a88;border-radius:22px;padding:28px 20px;background:#ffffff0d;backdrop-filter:blur(6px);margin-top:20px}
+.card .when{font-size:1.5rem;color:var(--gold2);font-weight:600}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:24px 0 6px}
+.cd div{border:1px solid #d4af6a66;border-radius:14px;padding:10px 0;background:#0a103088}
+.cd b{display:block;font-size:1.9rem;color:var(--gold2);line-height:1.1}.cd span{font-size:.8rem;opacity:.8}
+/* galeri */
+.gal{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:22px}
+.g{grid-column:span 2;aspect-ratio:3/4;border-radius:14px;overflow:hidden;border:1px solid #d4af6a88;cursor:zoom-in;background:#0008}
+.g:nth-child(-n+2){grid-column:span 3}
+.g img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.g:hover img{transform:scale(1.07)}
+.lb{position:fixed;inset:0;background:#000d;z-index:100;display:none;align-items:center;justify-content:center}
+.lb.on{display:flex}.lb img{max-width:88vw;max-height:84vh;border:2px solid var(--gold);border-radius:12px}
+.lb button{position:absolute;background:none;border:0;color:var(--gold2);font-size:2.6rem;cursor:pointer;padding:12px}
+.lb .x{top:6px;right:10px}.lb .p{left:4px}.lb .n{right:4px}
+/* doa & bintang */
+.doa{position:relative;overflow:hidden}
+.moon{width:130px;margin:16px auto 6px;filter:drop-shadow(0 0 14px #d4af6a88);animation:glow 4s ease-in-out infinite alternate}
+@keyframes glow{to{filter:drop-shadow(0 0 30px #f0dba6cc);transform:translateY(-6px)}}
+#dt{min-height:5.6em;font-style:italic;font-size:1.2rem;padding:0 6px;transition:opacity .4s}
+.st{position:absolute;color:var(--gold2);text-shadow:0 0 10px var(--gold);pointer-events:none;animation:rise 2.6s ease-out both}
+@keyframes rise{0%{opacity:0}15%{opacity:1}100%{transform:translate(var(--x),-280px) scale(.3) rotate(180deg);opacity:0}}
+footer{padding:50px 28px 70px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body class="lock">
+
+<div class="cover" id="cover">
+  <div class="cv l"></div><div class="cv r"></div>
+  <div class="cin">
+    <p class="small">Undangan Syukuran Khitanan dan ulang tahun</p>
+    <div class="arch"><img data-p="2" alt="Muhamad Arfan Gafi"></div>
+    <h1 class="script">Muhamad Arfan Gafi</h1>
+    <p class="guest">Kepada Yth. Bapak/Ibu/Saudara/i<b id="guest">Tamu Undangan</b></p>
+    <button class="btn" id="open">Buka Undangan</button>
+  </div>
+</div>
+
+<main class="wrap">
+  <section style="padding-top:56px">
+    <p class="script" style="font-size:1.8rem">Bismillahirrahmanirrahim</p>
+    <p style="margin-top:14px">Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
+    <p class="small" style="font-size:1.05rem;opacity:.9">Alhamdulillah, wa syukurillah atas limpahan rahmat, taufiq, hidayah, inayah dan Ridha Allah ta’ala, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara syukuran khitanan putra kami</p>
+    <div class="arch"><img data-p="5" alt="Foto Arfan"></div>
+    <h2 class="script" style="font-size:3.3rem">Muhamad Arfan Gafi</h2>
+    <p>Putra kedua<br>Bpk. Mediyana &amp; Ibu Romdonah / Iyom</p>
+    <div class="orn">✦ ✦ ✦</div>
+    <p class="small" style="font-size:1.05rem">Dengan memohon rahmat dan ridho Allah ta’ala, kami bermaksud menyelenggarakan tasyakuran khitanan putra kami yang insya Allah akan dilaksanakan pada:</p>
+  </section>
+
+  <section>
+    <p class="inv">Dengan penuh kebahagiaan, kami menantikan kehadiran<span class="script" id="g2">Anda</span>untuk berbagi doa dan kebersamaan pada</p>
+    <h2 class="script" style="margin-top:22px">Khitanan dan ulang tahun</h2>
+    <div class="card">
+      <p class="when">Minggu, 01 November 2026</p>
+      <p>Pukul 09.00 WIB – Selesai</p>
+      <div class="orn">✦</div>
+      <p>Kp. Pabuaran Pangkat RT. 004/001<br>Ds. Pangkat, Kec. Jayanti<br>Kab. Tangerang – Banten</p>
+      <div class="cd" id="cd"><div><b>0</b><span>Hari</span></div><div><b>0</b><span>Jam</span></div><div><b>0</b><span>Menit</span></div><div><b>0</b><span>Detik</span></div></div>
+      <a class="btn" id="maps" target="_blank" rel="noopener">Lihat Lokasi</a>
+      <a class="btn ghost" id="cal" target="_blank" rel="noopener">Simpan ke Kalender</a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="script">Galeri Arfan</h2>
+    <p class="small">Ketuk foto untuk memperbesar</p>
+    <div class="gal" id="gal"></div>
+  </section>
+
+  <section class="doa" id="doa">
+    <h2 class="script">Doa untuk Arfan</h2>
+    <svg class="moon" viewBox="0 0 100 100" aria-hidden="true">
+      <defs><linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e3b0"/><stop offset="1" stop-color="#b98e45"/></linearGradient>
+      <mask id="mk"><rect width="100" height="100" fill="#fff"/><circle cx="64" cy="42" r="34" fill="#000"/></mask></defs>
+      <circle cx="46" cy="52" r="40" fill="url(#gd)" mask="url(#mk)"/>
+      <path transform="translate(78 30)" d="M0-11L3-3 11 0 3 3 0 11-3 3-11 0-3-3Z" fill="#f6e3b0"/>
+    </svg>
+    <p id="dt">Ketuk bintang di bawah untuk membaca doa-doa terbaik bagi Arfan.</p>
+    <button class="btn" id="star">Terbitkan Bintang Doa</button>
+    <p class="small" id="cnt">&nbsp;</p>
+  </section>
+
+  <footer>
+    <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+    <p style="margin-top:14px">Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
+    <div class="orn">✦ ✦ ✦</div>
+    <p class="script" style="font-size:2rem">Keluarga Bpk. Mediyana &amp; Ibu Romdonah</p>
+  </footer>
+</main>
+
+<div class="lb" id="lb"><button class="x" aria-label="Tutup">×</button><button class="p" aria-label="Sebelumnya">‹</button><img alt=""><button class="n" aria-label="Berikutnya">›</button></div>
+
+<script>
+/* ====== PENGATURAN — ubah di sini ====== */
+const BASE = 'file:///C:/Users/muham/Downloads/bahan/';
+const EXT = ['jpeg','jpg','png','webp'];
+/* dicoba berurutan: folder yang sama dengan file HTML, lalu folder bahan */
+const cands = n => ['', BASE].flatMap(b => EXT.map(e => `${b}${n}.${e}`));
+const setImg = (img, n) => { const c = cands(n); let i = 0; img.onerror = () => { if (++i < c.length) img.src = c[i]; }; img.src = c[0]; };
+const PHOTOS = [2,3,4,5,6];
+const LOKASI = 'Kp. Pabuaran Pangkat, Pangkat, Jayanti, Kabupaten Tangerang, Banten';
+const MULAI = new Date('2026-11-01T09:00:00+07:00');
+const DOA = [
+  'Semoga Arfan tumbuh menjadi anak yang saleh, berbakti kepada orang tua, dan bermanfaat bagi sesama.',
+  'Semoga Allah menjaga Arfan dalam kesehatan, kemudahan, dan keberkahan ilmu.',
+  'Semoga khitanan ini menjadi awal langkah Arfan yang penuh kebaikan.',
+  'Semoga keluarga kami selalu dilimpahi rahmat, kebahagiaan, dan kebersamaan.',
+  'Semoga doa dan kehadiran Anda dibalas kebaikan berlipat oleh Allah ta’ala.'
+];
+/* ======================================= */
+const $ = s => document.querySelector(s);
+
+document.querySelectorAll('[data-p]').forEach(i => setImg(i, i.dataset.p));
+const to = new URLSearchParams(location.search).get('to');   // contoh: undangan.html?to=Pak Haji
+if (to) { $('#guest').textContent = to; $('#g2').textContent = to; }
+
+/* percikan emas */
+const sparkle = (el, n) => { for (let i = 0; i < n; i++) { const s = document.createElement('i'); s.className = 'sp';
+  s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*3}s;animation-duration:${2+Math.random()*3}s`;
+  el.appendChild(s); } };
+sparkle($('.cover'), 16); sparkle($('#doa'), 22);
+
+$('#open').onclick = () => { $('#cover').classList.add('open'); document.body.classList.remove('lock'); scrollTo(0,0);
+  setTimeout(() => $('#cover').style.display = 'none', 2000); };
+
+/* hitung mundur */
+const tick = () => { let d = Math.max(0, MULAI - Date.now()) / 1000;
+  const v = [Math.floor(d/86400), Math.floor(d%86400/3600), Math.floor(d%3600/60), Math.floor(d%60)];
+  document.querySelectorAll('#cd b').forEach((b,i) => b.textContent = String(v[i]).padStart(2,'0')); };
+tick(); setInterval(tick, 1000);
+
+/* lokasi & kalender */
+$('#maps').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(LOKASI);
+$('#cal').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent('Syukuran Khitanan Muhamad Arfan Gafi') +
+  '&dates=20261101T020000Z/20261101T060000Z&location=' + encodeURIComponent(LOKASI);
+
+/* galeri + lightbox */
+const lb = $('#lb'), lbi = lb.querySelector('img'); let cur = 0;
+PHOTOS.forEach((n, i) => { const g = document.createElement('div'); g.className = 'g'; g.tabIndex = 0;
+  g.innerHTML = `<img alt="Foto Arfan ${i+1}">`; setImg(g.firstChild, n);
+  g.onclick = () => show(i); g.onkeydown = e => e.key === 'Enter' && show(i); $('#gal').appendChild(g); });
+const show = i => { cur = (i + PHOTOS.length) % PHOTOS.length; lbi.src = $('#gal').children[cur].firstChild.src; lb.classList.add('on'); };
+lb.querySelector('.x').onclick = () => lb.classList.remove('on');
+lb.querySelector('.p').onclick = () => show(cur - 1);
+lb.querySelector('.n').onclick = () => show(cur + 1);
+lb.onclick = e => e.target === lb && lb.classList.remove('on');
+addEventListener('keydown', e => { if (!lb.classList.contains('on')) return;
+  if (e.key === 'Escape') lb.classList.remove('on'); if (e.key === 'ArrowLeft') show(cur - 1); if (e.key === 'ArrowRight') show(cur + 1); });
+
+/* bintang doa */
+let k = 0, c = 0; const dt = $('#dt'), doa = $('#doa');
+$('#star').onclick = e => {
+  const r = e.currentTarget.getBoundingClientRect(), s = doa.getBoundingClientRect();
+  for (let i = 0; i < 14; i++) { const t = document.createElement('i'); t.className = 'st'; t.textContent = '✦';
+    t.style.cssText = `left:${r.left - s.left + r.width/2}px;top:${r.top - s.top}px;--x:${Math.random()*240-120}px;animation-delay:${i*40}ms;font-size:${.8+Math.random()}rem`;
+    doa.appendChild(t); setTimeout(() => t.remove(), 3400); }
+  dt.style.opacity = 0; setTimeout(() => { dt.textContent = DOA[k++ % DOA.length]; dt.style.opacity = 1; }, 300);
+  $('#cnt').textContent = `✦ ${++c} bintang doa telah Anda terbitkan`;
+};
+</script>
+</body>
+</html>
